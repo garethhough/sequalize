@@ -1,4 +1,3 @@
-const { title } = require("process");
 const yargs = require("yargs");
 const { sequelize } = require("./db/connection");
 const { addMovie } = require("./movie/function");
@@ -18,7 +17,7 @@ const app = async (yargsObj) => {
             console.log(movies);
         } else if (yargsObj.update) {
             //update entry in movie table
-            await updateMovie({title: yargsObj.title}, {title: yargs.title, actor: yargsObj.actor});
+            await updateMovie({title: yargsObj.title}, {title: yargsObj.newtitle, actor: yargsObj.newactor});
         } else if (yargsObj.delete) {
             //delete entry from movie table 
             await deleteMovie({title: yargsObj.title});
