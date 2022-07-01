@@ -12,7 +12,7 @@ exports.addMovie = async(movieObj) => {
 exports.listMovies = async() => {
     try {
         const response = await Movie.findAll();
-        console.log(response);
+       console.log("All Movies:", JSON.stringify(response, null, 2));
     } catch (error) {
         console.log(error);
     }
